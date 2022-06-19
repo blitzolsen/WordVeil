@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Get</button>
+</div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = JSON.stringify(this.responseText);
+  }
+  //var j = '{"first": "steve", "last": "Smith"}';
+  xhttp.open("GET", "https://wvdb-aa631-default-rtdb.firebaseio.com/users/2d25e2d.json");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
